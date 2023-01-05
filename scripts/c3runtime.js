@@ -3793,6 +3793,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.Every,
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.System.Cnds.CompareVar,
+		C3.Plugins.Button.Acts.SetVisible,
 		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Plugins.Button.Cnds.OnClicked,
 		C3.Plugins.System.Acts.SubVar,
