@@ -3782,10 +3782,10 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.Arr.Acts.SetSize,
 		C3.Plugins.Arr.Acts.SetXY,
+		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.System.Cnds.CompareBoolVar,
 		C3.Plugins.System.Cnds.IsGroupActive,
-		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.Sprite.Acts.SetSize,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.System.Acts.SetBoolVar,
@@ -3795,6 +3795,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Plugins.Button.Cnds.OnClicked,
+		C3.Plugins.System.Acts.SubVar,
 		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.System.Acts.CreateObject,
@@ -3826,11 +3827,11 @@ self.C3_JsPropNameTable = [
 	{MinusHP: 0},
 	{Debug: 0},
 	{Array: 0},
-	{Sprite: 0},
+	{Mask: 0},
 	{GameOver: 0},
 	{按鈕: 0},
 	{Timer: 0},
-	{Text: 0},
+	{PlayState: 0},
 	{IsStartGame: 0},
 	{PlayTimer: 0},
 	{ChooseHerbicide: 0},
@@ -3838,7 +3839,9 @@ self.C3_JsPropNameTable = [
 	{PositionIndex: 0},
 	{DistroyWeedCounter: 0},
 	{IsCreating: 0},
-	{PlayState: 0},
+	{UpdateTimer: 0},
+	{IsChangeState: 0},
+	{ChangeTime: 0},
 	{WeedKind: 0}
 ];
 }
@@ -3977,9 +3980,14 @@ self.C3_ExpressionFuncs = [
 		() => 11,
 		() => 618,
 		() => 616,
+		() => "第一階段",
 		() => "遊戲進程",
 		() => "Time:60",
 		() => 192,
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => v0.GetValue();
+		},
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => and("Time:", (60 - v0.GetValue()));
@@ -3989,9 +3997,23 @@ self.C3_ExpressionFuncs = [
 			const v0 = p._GetNode(0).GetVar();
 			return () => and((("遊戲結束" + "\n") + "得分:"), v0.GetValue());
 		},
+		() => 40,
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => and(("第三階段" + "\n"), v0.GetValue());
+		},
+		() => 20,
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => and(("第二階段" + "\n"), v0.GetValue());
+		},
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => and("階段", v0.GetValue());
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (1 - ((v0.GetValue() - 1) * 0.1));
 		},
 		() => "選擇除草劑",
 		() => 200,
@@ -4007,11 +4029,11 @@ self.C3_ExpressionFuncs = [
 		() => "MinusHP",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
-			return () => v0.GetValue();
+			return () => (v0.GetValue() - 1);
 		},
 		p => {
 			const v0 = p._GetNode(0).GetVar();
-			return () => (v0.GetValue() - 1);
+			return () => (1 + v0.GetValue());
 		},
 		() => 0.3,
 		() => "創建雜草",
@@ -4040,6 +4062,7 @@ self.C3_ExpressionFuncs = [
 			const v1 = p._GetNode(1).GetVar();
 			return () => and(and(v0.GetValue(), ",WeedKind : "), v1.GetValue());
 		},
+		() => 1.5,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const f1 = p._GetNode(1).GetBoundMethod();
