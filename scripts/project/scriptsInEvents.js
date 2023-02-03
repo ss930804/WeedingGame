@@ -39,7 +39,7 @@ const scriptsInEvents = {
 		console.log("Grow Time up");
 	},
 
-	async 事件表1_Event42_Act1(runtime, localVars)
+	async 事件表1_Event45_Act1(runtime, localVars)
 	{
 		console.log("GameTime up");
 	}

@@ -4161,7 +4161,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.CompareBoolVar,
 		C3.Plugins.Spritefont2.Acts.SetText,
 		C3.ScriptsInEvents.事件表1_Event41_Act1,
-		C3.ScriptsInEvents.事件表1_Event42_Act1,
+		C3.Plugins.System.Cnds.Else,
+		C3.ScriptsInEvents.事件表1_Event45_Act1,
 		C3.Plugins.Sprite.Cnds.CompareFrame,
 		C3.Plugins.Sprite.Acts.StartAnim,
 		C3.Plugins.Mouse.Exps.X,
@@ -4171,7 +4172,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.Sprite.Exps.UID,
 		C3.Plugins.Sprite.Cnds.PickByUID,
-		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.Sprite.Cnds.IsVisible,
 		C3.Plugins.Sprite.Exps.X,
@@ -4230,6 +4230,7 @@ self.C3_JsPropNameTable = [
 	{GrowTime: 0},
 	{GrowTimer: 0},
 	{Gaming: 0},
+	{IsStoping: 0},
 	{MyHerbicideIndex: 0},
 	{CreatePointIndex: 0},
 	{NowStage: 0},
@@ -4409,7 +4410,7 @@ self.C3_ExpressionFuncs = [
 			const v0 = p._GetNode(0).GetVar();
 			return () => (60 - v0.GetValue());
 		},
-		() => 12,
+		() => 30,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => (f0() + 5);
