@@ -3,7 +3,7 @@
 
 const scriptsInEvents = {
 
-	async 事件表1_Event2_Act3(runtime, localVars)
+	async 事件表1_Event2_Act6(runtime, localVars)
 	{
 		console.log("UserID : "+runtime.globalVars.UserID);
 	},
@@ -27,19 +27,19 @@ const scriptsInEvents = {
 		}
 	},
 
-	async 事件表1_Event24_Act2(runtime, localVars)
+	async 事件表1_Event25_Act2(runtime, localVars)
 	{
 		console.log("Add new player data!");
 		var js = JSON.parse(runtime.globalVars.UserID);
 		runtime.globalVars.UserID = js["name"];
 	},
 
-	async 事件表1_Event40_Act1(runtime, localVars)
+	async 事件表1_Event41_Act1(runtime, localVars)
 	{
 		console.log("Grow Time up");
 	},
 
-	async 事件表1_Event41_Act1(runtime, localVars)
+	async 事件表1_Event42_Act1(runtime, localVars)
 	{
 		console.log("GameTime up");
 	}
