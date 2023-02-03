@@ -1,10 +1,10 @@
 {
-	"name": "WeedingGame",
-	"short_name": "WeedingGame",
+	"name": "WeedingGame2",
+	"short_name": "WeedingGame2",
 	"description": "",
 	"start_url": "index.html",
 	"display": "fullscreen",
-	"orientation": "portrait",
+	"orientation": "landscape",
 	"background_color": "#ffffff",
 	"icons": [
 		{
