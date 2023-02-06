@@ -4134,35 +4134,30 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Plugins.System.Acts.SetLayerInteractive,
-		C3.Plugins.LocalStorage.Acts.GetItem,
 		C3.Plugins.System.Acts.Wait,
-		C3.ScriptsInEvents.事件表1_Event2_Act6,
 		C3.Plugins.AJAX.Acts.Request,
-		C3.Plugins.AJAX.Cnds.OnComplete,
-		C3.Plugins.Json.Acts.Parse,
-		C3.Plugins.AJAX.Exps.LastData,
-		C3.Plugins.System.Acts.SetVar,
-		C3.Plugins.Json.Exps.ToCompactString,
-		C3.Plugins.Json.Exps.Get,
-		C3.ScriptsInEvents.事件表1_Event3_Act6,
-		C3.Plugins.LocalStorage.Cnds.OnItemGet,
-		C3.Plugins.LocalStorage.Exps.ItemValue,
-		C3.Plugins.LocalStorage.Cnds.OnItemMissing,
 		C3.Plugins.Sprite.Acts.StopAnim,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.Sprite.Acts.SetPos,
+		C3.Plugins.System.Acts.SetVar,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
-		C3.Plugins.LocalStorage.Acts.SetItem,
 		C3.Plugins.Sprite.Acts.SetBoolInstanceVar,
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
 		C3.Plugins.System.Acts.SetBoolVar,
 		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.Button.Cnds.OnClicked,
+		C3.Plugins.TextBox.Cnds.CompareText,
 		C3.Plugins.TextBox.Exps.Text,
 		C3.Plugins.Button.Acts.SetEnabled,
+		C3.Plugins.AJAX.Cnds.OnComplete,
+		C3.Plugins.Json.Acts.Parse,
+		C3.Plugins.AJAX.Exps.LastData,
+		C3.Plugins.Json.Exps.ToCompactString,
 		C3.Plugins.System.Cnds.CompareVar,
-		C3.ScriptsInEvents.事件表1_Event29_Act2,
-		C3.ScriptsInEvents.事件表1_Event30_Act2,
+		C3.Plugins.AJAX.Acts.Post,
+		C3.Plugins.System.Cnds.Else,
+		C3.ScriptsInEvents.事件表1_Event24_Act2,
+		C3.ScriptsInEvents.事件表1_Event27_Act2,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.System.Cnds.ForEach,
@@ -4170,12 +4165,12 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Exps.int,
 		C3.Plugins.System.Exps.random,
 		C3.Plugins.System.Cnds.Compare,
+		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.System.Cnds.Every,
 		C3.Plugins.System.Cnds.CompareBoolVar,
 		C3.Plugins.Spritefont2.Acts.SetText,
-		C3.ScriptsInEvents.事件表1_Event46_Act1,
-		C3.Plugins.System.Cnds.Else,
-		C3.ScriptsInEvents.事件表1_Event50_Act1,
+		C3.ScriptsInEvents.事件表1_Event47_Act1,
+		C3.ScriptsInEvents.事件表1_Event51_Act1,
 		C3.Plugins.iframe.Acts.DisplayHTMLString,
 		C3.Plugins.Sprite.Cnds.CompareFrame,
 		C3.Plugins.Sprite.Acts.StartAnim,
@@ -4195,7 +4190,10 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Cnds.OnCreated,
 		C3.Behaviors.Timer.Acts.StartTimer,
 		C3.Behaviors.Timer.Cnds.OnTimer,
-		C3.Plugins.Sprite.Acts.Destroy
+		C3.Plugins.Sprite.Acts.Destroy,
+		C3.Plugins.TextBox.Cnds.OnTextChanged,
+		C3.ScriptsInEvents.事件表1_Event100_Act2,
+		C3.Plugins.TextBox.Acts.SetText
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4240,9 +4238,11 @@ self.C3_JsPropNameTable = [
 	{平鋪背景: 0},
 	{平鋪背景2: 0},
 	{平鋪背景3: 0},
+	{位圖字體2: 0},
 	{UserID: 0},
 	{MyData: 0},
 	{MyPhone: 0},
+	{MyName: 0},
 	{Debug: 0},
 	{GameState: 0},
 	{GameTime: 0},
@@ -4255,8 +4255,8 @@ self.C3_JsPropNameTable = [
 	{CreatePointIndex: 0},
 	{TotalPoint: 0},
 	{IsMouseClick: 0},
-	{NowStage: 0},
 	{RandomChange: 0},
+	{NowStage: 0},
 	{WeedUID: 0},
 	{point: 0}
 ];
@@ -4361,29 +4361,10 @@ function or(l, r)
 self.C3_ExpressionFuncs = [
 		() => "測試用程式",
 		() => 0,
-		() => "id",
 		() => 0.1,
 		() => "data",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => (("https://arshooting-f0eb9-default-rtdb.asia-southeast1.firebasedatabase.app/Leaders/" + v0.GetValue()) + ".json");
-		},
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0();
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			return () => n0.ExpObject();
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			const v2 = p._GetNode(2).GetVar();
-			return () => n0.ExpObject(((and(v1.GetValue(), ".") + v2.GetValue()) + ".email"));
-		},
+		() => "https://weedingg-e6f04-default-rtdb.asia-southeast1.firebasedatabase.app/LoadingData.json",
 		() => "初始化",
-		() => "",
 		() => 1,
 		() => 2,
 		() => 3,
@@ -4391,24 +4372,45 @@ self.C3_ExpressionFuncs = [
 		() => 1600,
 		() => -300,
 		() => -1,
+		() => 14,
+		() => 1986,
+		() => "按鈕事件",
+		() => "",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject();
+		},
+		() => "GetPlayerData",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (and("https://weedingg-e6f04-default-rtdb.asia-southeast1.firebasedatabase.app/LoadingData/", v0.GetValue()) + ".json");
+		},
+		() => "AJAX事件",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0();
+		},
+		() => "null",
+		() => "AddNewPlayerData",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (("{\"Name\":\"" + v0.GetValue()) + "\"}");
+		},
+		() => "PATCH",
+		() => "False",
+		() => "GetRanking",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => v0.GetValue();
 		},
-		() => 14,
-		() => 1986,
-		() => "按鈕事件",
-		() => "AJAX事件",
-		() => "GetPlayerData",
-		() => "null",
-		() => "AddNewPlayerData",
-		() => "GetRanking",
+		() => "AddRanking",
+		() => "https://weedingg-e6f04-default-rtdb.asia-southeast1.firebasedatabase.app/ScoreRanking.json",
 		() => "遊戲場景事件",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => (v0.GetValue() + 1);
 		},
-		() => 6,
+		() => 5,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const f1 = p._GetNode(1).GetBoundMethod();
@@ -4432,14 +4434,22 @@ self.C3_ExpressionFuncs = [
 			return () => (n0.ExpInstVar() + 1);
 		},
 		() => 12,
+		() => 6,
+		() => "遊戲時間",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => (60 - v0.GetValue());
 		},
 		() => 30,
-		() => "https://weedingg-e6f04-default-rtdb.asia-southeast1.firebasedatabase.app/ScoreRanking.json",
 		() => "<div id=\"fb-root\"></div>\n<script async defer crossorigin=\"anonymous\" src=\"https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v16.0\" nonce=\"6VozwxiT\"></script>\n<div class=\"fb-share-button\" data-href=\"https://www.kooco.co/\" data-layout=\"button\" data-size=\"large\" style=\"width=100% height=100%\"><a target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse\" class=\"fb-xfbml-parse-ignore\">分享</a></div>",
 		() => "<div id=\"fb-root\"></div>\n<script async defer crossorigin=\"anonymous\" src=\"https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v16.0\" nonce=\"7XN23QtV\"></script>\n<div class=\"fb-share-button\" data-href=\"https://www.kooco.co/\" data-layout=\"button\" data-size=\"small\"><a target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.kooco.co%2F&amp;src=sdkpreparse\" class=\"fb-xfbml-parse-ignore\">分享</a></div>\n",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const v1 = p._GetNode(1).GetVar();
+			return () => (and((("{\"" + v0.GetValue()) + "\":"), v1.GetValue()) + "}");
+		},
+		() => "除草劑",
+		() => "分數顯示",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => (f0() + 5);
@@ -4449,7 +4459,6 @@ self.C3_ExpressionFuncs = [
 			return () => (f0() - 5);
 		},
 		() => "Point",
-		() => 5,
 		() => -3,
 		p => {
 			const n0 = p._GetNode(0);

@@ -3,38 +3,17 @@
 
 const scriptsInEvents = {
 
-	async 事件表1_Event2_Act6(runtime, localVars)
+	async 事件表1_Event24_Act2(runtime, localVars)
 	{
-		console.log("UserID : "+runtime.globalVars.UserID);
-	},
-
-	async 事件表1_Event3_Act6(runtime, localVars)
-	{
-		if(runtime.globalVars.MyData == "null") return;
-		var js = JSON.parse(runtime.globalVars.MyData); //JSON.parse 將JSON格式轉回物件型態 才能使用Object.keys
-		console.log("JSON:"+js);
-		if(js != null)
-		{
-			var allkeys = Object.keys(js);
-			console.log("Get Object.keys count:" + allkeys.length); //length 數量
-			console.log("Get Object.keys:" + allkeys);
+		var js = JSON.parse(runtime.globalVars.Debug);
 		
-			for(var i = 0;i<allkeys.length;i++)
-			{
-				//取得Value方法 json物件型態[key]
-				console.log("key : " + allkeys[i] + ", value : " + js[allkeys[i]]);
-			}
+		if(js[0]!=runtime.globalVars.MyName)
+		{
+			runtime.globalVars.Debug="False";
 		}
 	},
 
-	async 事件表1_Event29_Act2(runtime, localVars)
-	{
-		console.log("Add new player data!");
-		var js = JSON.parse(runtime.globalVars.UserID);
-		runtime.globalVars.UserID = js["name"];
-	},
-
-	async 事件表1_Event30_Act2(runtime, localVars)
+	async 事件表1_Event27_Act2(runtime, localVars)
 	{
 		console.log("Get Ranking");
 		var js = JSON.parse(runtime.globalVars.Debug);
@@ -82,14 +61,32 @@ const scriptsInEvents = {
 		runtime.globalVars.Debug = rank;
 	},
 
-	async 事件表1_Event46_Act1(runtime, localVars)
+	async 事件表1_Event47_Act1(runtime, localVars)
 	{
 		console.log("Grow Time up");
 	},
 
-	async 事件表1_Event50_Act1(runtime, localVars)
+	async 事件表1_Event51_Act1(runtime, localVars)
 	{
 		console.log("GameTime up");
+	},
+
+	async 事件表1_Event100_Act2(runtime, localVars)
+	{
+		var phone=runtime.globalVars.Debug;
+		var js = JSON.parse(runtime.globalVars.MyData);
+		
+		console.log(js);
+		
+		var keys = Object.keys(js);
+		for(var i = 0;i<keys.length;i++)
+		{
+			if(keys[i]==phone)
+			{
+				runtime.globalVars.Debug=js[phone]["Name"];
+				break;
+			}
+		}
 	}
 
 };
