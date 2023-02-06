@@ -27,14 +27,14 @@ const scriptsInEvents = {
 		}
 	},
 
-	async 事件表1_Event25_Act2(runtime, localVars)
+	async 事件表1_Event29_Act2(runtime, localVars)
 	{
 		console.log("Add new player data!");
 		var js = JSON.parse(runtime.globalVars.UserID);
 		runtime.globalVars.UserID = js["name"];
 	},
 
-	async 事件表1_Event26_Act2(runtime, localVars)
+	async 事件表1_Event30_Act2(runtime, localVars)
 	{
 		console.log("Get Ranking");
 		var js = JSON.parse(runtime.globalVars.Debug);
@@ -82,12 +82,12 @@ const scriptsInEvents = {
 		runtime.globalVars.Debug = rank;
 	},
 
-	async 事件表1_Event42_Act1(runtime, localVars)
+	async 事件表1_Event46_Act1(runtime, localVars)
 	{
 		console.log("Grow Time up");
 	},
 
-	async 事件表1_Event46_Act1(runtime, localVars)
+	async 事件表1_Event50_Act1(runtime, localVars)
 	{
 		console.log("GameTime up");
 	}
