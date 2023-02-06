@@ -3,7 +3,7 @@
 
 const scriptsInEvents = {
 
-	async 事件表1_Event2_Act7(runtime, localVars)
+	async 事件表1_Event2_Act6(runtime, localVars)
 	{
 		console.log("UserID : "+runtime.globalVars.UserID);
 	},
