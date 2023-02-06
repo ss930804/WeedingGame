@@ -4181,11 +4181,12 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Mouse.Exps.X,
 		C3.Plugins.Mouse.Exps.Y,
 		C3.Plugins.Sprite.Cnds.IsBoolInstanceVarSet,
-		C3.Plugins.Mouse.Cnds.OnClick,
-		C3.Plugins.Mouse.Cnds.OnObjectClicked,
+		C3.Plugins.Touch.Cnds.OnTapGesture,
 		C3.Plugins.Sprite.Exps.UID,
 		C3.Plugins.Sprite.Cnds.PickByUID,
 		C3.Plugins.System.Acts.CreateObject,
+		C3.Plugins.Touch.Exps.X,
+		C3.Plugins.Touch.Exps.Y,
 		C3.Plugins.Sprite.Cnds.IsVisible,
 		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.Sprite.Exps.Y,
@@ -4391,6 +4392,8 @@ self.C3_ExpressionFuncs = [
 			const v0 = p._GetNode(0).GetVar();
 			return () => v0.GetValue();
 		},
+		() => 14,
+		() => 1986,
 		() => "按鈕事件",
 		() => "AJAX事件",
 		() => "GetPlayerData",
@@ -4420,7 +4423,6 @@ self.C3_ExpressionFuncs = [
 		() => 90,
 		() => 13,
 		() => 100,
-		() => 14,
 		() => 9,
 		p => {
 			const n0 = p._GetNode(0);
