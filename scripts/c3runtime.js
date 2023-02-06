@@ -4439,6 +4439,7 @@ self.C3_ExpressionFuncs = [
 		() => 30,
 		() => "https://weedingg-e6f04-default-rtdb.asia-southeast1.firebasedatabase.app/ScoreRanking.json",
 		() => "<div id=\"fb-root\"></div>\n<script async defer crossorigin=\"anonymous\" src=\"https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v16.0\" nonce=\"6VozwxiT\"></script>\n<div class=\"fb-share-button\" data-href=\"https://www.kooco.co/\" data-layout=\"button\" data-size=\"large\"><a target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse\" class=\"fb-xfbml-parse-ignore\">分享</a></div>",
+		() => "<div id=\"fb-root\"></div>\n<script async defer crossorigin=\"anonymous\" src=\"https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v16.0\" nonce=\"7XN23QtV\"></script>\n<div class=\"fb-share-button\" data-href=\"https://www.kooco.co/\" data-layout=\"button\" data-size=\"small\"><a target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.kooco.co%2F&amp;src=sdkpreparse\" class=\"fb-xfbml-parse-ignore\">分享</a></div>\n",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => (f0() + 5);
