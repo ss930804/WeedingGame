@@ -4,15 +4,13 @@ padding:0 5px;
 color:black;
 background-color:#C6884F;
 font-size:2vw;
-border-radius: 5px;
+border-radius: 0.5vw;
 }
 #ScrollBar
 {
-color:black;
-background-color:#C6884F;
 font-size:2vw;
-border-radius: 5px;
-
+border-radius: 0.5vw;
+background:url(/文件/遊戲開始頁面_選單選中.png)
 }
 #Share
 {
