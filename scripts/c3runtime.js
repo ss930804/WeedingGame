@@ -4257,6 +4257,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Plugins.System.Acts.SetLayerInteractive,
 		C3.Plugins.System.Acts.Wait,
+		C3.Plugins.AJAX.Acts.Request,
 		C3.Plugins.Sprite.Acts.StopAnim,
 		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
@@ -4276,7 +4277,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.TextBox.Cnds.CompareText,
 		C3.Plugins.TextBox.Exps.Text,
 		C3.Plugins.List.Exps.SelectedIndex,
-		C3.Plugins.AJAX.Acts.Request,
 		C3.Plugins.List.Cnds.OnSelectionChanged,
 		C3.Plugins.List.Exps.SelectedText,
 		C3.Plugins.List.Acts.Clear,
@@ -4537,12 +4537,14 @@ self.C3_ExpressionFuncs = [
 		() => "BG",
 		() => -10,
 		() => 0,
-		() => 5,
 		() => 0.1,
+		() => "data",
+		() => "https://weedingg-e6f04-default-rtdb.asia-southeast1.firebasedatabase.app/LoadingData.json",
 		() => 1,
 		() => 2,
 		() => 3,
 		() => 4,
+		() => 5,
 		() => 1600,
 		() => -300,
 		() => -1,
@@ -4589,7 +4591,6 @@ self.C3_ExpressionFuncs = [
 			const n1 = p._GetNode(1);
 			return () => n0.ExpObject(1, n1.ExpObject());
 		},
-		() => "data",
 		() => "null",
 		() => "AddNewPlayerData",
 		p => {
@@ -4624,7 +4625,6 @@ self.C3_ExpressionFuncs = [
 			return () => n0.ExpObject(n1.ExpObject(), 1);
 		},
 		() => "AddRanking",
-		() => "https://weedingg-e6f04-default-rtdb.asia-southeast1.firebasedatabase.app/LoadingData.json",
 		() => "遊戲場景事件",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
