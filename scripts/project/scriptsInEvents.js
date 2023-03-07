@@ -31,15 +31,7 @@ const scriptsInEvents = {
 		//第一步 排序分數
 		//自定義排序方法
 		function compare(a, b) {
-		  if(a > b) {
-		    return -1 // 如果 a 大於 b ，就把 a 排在 b 前面
-		  }
-		
-		  if (a < b) {
-		    return 11 // 如果 a 大於 b ，就把 a 排在 b 後面
-		  }
-		
-		  return 0 // a = b ，就不動
+		  return b - a;
 		}
 		
 		// 把 compare function 傳進去 numbers.sort()

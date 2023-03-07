@@ -4533,6 +4533,7 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "除草劑",
 		() => 0.05,
+		() => 0.5,
 		() => 45,
 		() => 9,
 		() => "分數顯示",
@@ -4554,7 +4555,6 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpObject() - 5);
 		},
-		() => 0.5,
 		() => "Destroy"
 ];
 
