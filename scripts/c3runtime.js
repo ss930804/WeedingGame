@@ -4260,6 +4260,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.AJAX.Acts.Request,
 		C3.Plugins.Sprite.Acts.StopAnim,
 		C3.Plugins.Sprite.Acts.SetVisible,
+		C3.Plugins.Sprite.Acts.SetY,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.System.Acts.SetBoolVar,
@@ -4271,7 +4272,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
 		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.Sprite.Cnds.CompareY,
-		C3.Plugins.Sprite.Acts.SetY,
 		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.Share.Acts.Share,
 		C3.Plugins.TextBox.Cnds.CompareText,
@@ -4309,9 +4309,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Exps.random,
 		C3.Plugins.System.Cnds.Every,
 		C3.Plugins.System.Cnds.CompareBoolVar,
-		C3.ScriptsInEvents.事件表1_Event73_Act1,
-		C3.ScriptsInEvents.事件表1_Event78_Act1,
-		C3.Plugins.iframe.Acts.DisplayHTMLString,
+		C3.ScriptsInEvents.事件表1_Event74_Act1,
+		C3.ScriptsInEvents.事件表1_Event79_Act1,
 		C3.Plugins.Mouse.Exps.X,
 		C3.Plugins.Mouse.Exps.Y,
 		C3.Plugins.Touch.Exps.X,
@@ -4334,7 +4333,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Timer.Cnds.OnTimer,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.TextBox.Cnds.OnTextChanged,
-		C3.ScriptsInEvents.事件表1_Event169_Act2,
+		C3.ScriptsInEvents.事件表1_Event170_Act2,
 		C3.Plugins.TextBox.Acts.SetText
 	];
 };
@@ -4368,6 +4367,8 @@ self.C3_JsPropNameTable = [
 	{LoginBG: 0},
 	{PickBG: 0},
 	{PickBtnBG: 0},
+	{FalseBG: 0},
+	{FalsePanel: 0},
 	{Text_Context: 0},
 	{Text_Ranking: 0},
 	{Text_RankName: 0},
@@ -4545,6 +4546,9 @@ self.C3_ExpressionFuncs = [
 		() => 3,
 		() => 4,
 		() => 5,
+		() => 6,
+		() => 952,
+		() => 1330,
 		() => 1600,
 		() => -300,
 		() => -1,
@@ -4563,10 +4567,7 @@ self.C3_ExpressionFuncs = [
 		() => "點擊除草劑",
 		() => "選取農藥_3",
 		() => "Pick",
-		() => 6,
 		() => 7,
-		() => 960,
-		() => 1330,
 		() => "分享網址",
 		() => "ShareURL",
 		() => "https://www.kooco.co/",
@@ -4648,8 +4649,6 @@ self.C3_ExpressionFuncs = [
 			return () => f0(f1(10));
 		},
 		() => "遊戲時間",
-		() => "<div id=\"fb-root\"></div>\n<script async defer crossorigin=\"anonymous\" src=\"https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v16.0\" nonce=\"6VozwxiT\"></script>\n<div class=\"fb-share-button\" data-href=\"https://www.kooco.co/\" data-layout=\"button\" data-size=\"large\" style=\"width=100% height=100%\"></div>",
-		() => "<div id=\"fb-root\"></div>\n<script async defer crossorigin=\"anonymous\" src=\"https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v16.0\" nonce=\"7XN23QtV\"></script>\n<div class=\"fb-share-button\" data-href=\"https://www.kooco.co/\" data-layout=\"button\" data-size=\"small\"></div>\n",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => (and("{\"Point\":\"", v0.GetValue()) + "\"}");
