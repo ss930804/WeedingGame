@@ -3988,6 +3988,15 @@ SampleRate(){return this._sampleRate},CurrentTime(){if(self["C3_GetAudioContextC
 }
 
 {
+'use strict';{const C3=self.C3;C3.Plugins.Share=class SharePlugin extends C3.SDKPluginBase{constructor(opts){super(opts)}Release(){super.Release()}}}{const C3=self.C3;C3.Plugins.Share.Type=class ShareType extends C3.SDKTypeBase{constructor(objectClass){super(objectClass)}Release(){super.Release()}OnCreate(){}}}
+{const C3=self.C3;const DOM_COMPONENT_ID="share";C3.Plugins.Share.Instance=class ShareInstance extends C3.SDKInstanceBase{constructor(inst,properties){super(inst,DOM_COMPONENT_ID);this._isSupported=false;this._isFilesSupported=false;this._files=[];this.AddDOMMessageHandlers([["share-completed",()=>this._OnShareCompleted()],["share-failed",()=>this._OnShareFailed()]]);this._runtime.AddLoadPromise(this.PostToDOMAsync("init").then(o=>{this._isFilesSupported=o["isFilesSupported"];this._isSupported=o["isSupported"]}))}_OnShareCompleted(){this.Trigger(C3.Plugins.Share.Cnds.OnShareCompleted)}_OnShareFailed(){this.Trigger(C3.Plugins.Share.Cnds.OnShareFailed)}}}
+{const C3=self.C3;C3.Plugins.Share.Cnds={IsSupported(){return this._isSupported},IsSharingFilesSupported(){return this._isFilesSupported},OnShareCompleted(){return true},OnShareFailed(){return true}}}
+{const C3=self.C3;C3.Plugins.Share.Acts={Share(text,title,url){if(!this._isSupported)return;this._PostToDOMMaybeSync("share",{"text":text,"title":title,"url":url,"files":this._files});C3.clearArray(this._files)},AddFile(filename,type,objectClass){if(!this._isFilesSupported)return;if(!objectClass)return;const inst=objectClass.GetFirstPicked(this._inst);if(!inst)return;const arrayBuffer=inst.GetSdkInstance().GetArrayBufferReadOnly();if(arrayBuffer.byteLength===0)return;const FileCtor=self["RealFile"]||
+self["File"];const file=new FileCtor([arrayBuffer],filename,{"type":type});this._files.push(file)},RequestRate(body,confirm,cancel,appID){this._PostToDOMMaybeSync("request-rate",{"body":body,"confirm":confirm,"cancel":cancel,"appID":appID||this._runtime.GetAppId()})},RequestStore(appID){this._PostToDOMMaybeSync("request-store",{"appID":appID||this._runtime.GetAppId()})}}}{const C3=self.C3;C3.Plugins.Share.Exps={}};
+
+}
+
+{
 'use strict';{const C3=self.C3;C3.Plugins.Text=class TextPlugin extends C3.SDKPluginBase{constructor(opts){super(opts)}Release(){super.Release()}}}{const C3=self.C3;C3.Plugins.Text.Type=class TextType extends C3.SDKTypeBase{constructor(objectClass){super(objectClass)}Release(){super.Release()}OnCreate(){}LoadTextures(renderer){}ReleaseTextures(){}}}
 {const C3=self.C3;const C3X=self.C3X;const TEMP_COLOR_ARRAY=[0,0,0];const TEXT=0;const ENABLE_BBCODE=1;const FONT=2;const SIZE=3;const LINE_HEIGHT=4;const BOLD=5;const ITALIC=6;const COLOR=7;const HORIZONTAL_ALIGNMENT=8;const VERTICAL_ALIGNMENT=9;const WRAPPING=10;const INITIALLY_VISIBLE=11;const ORIGIN=12;const READ_ALOUD=13;const HORIZONTAL_ALIGNMENTS=["left","center","right"];const VERTICAL_ALIGNMENTS=["top","center","bottom"];const WORD_WRAP=0;const CHARACTER_WRAP=1;const tempRect=new C3.Rect;
 const tempQuad=new C3.Quad;const tempColor=new C3.Color;C3.Plugins.Text.Instance=class TextInstance extends C3.SDKWorldInstanceBase{constructor(inst,properties){super(inst);this._text="";this._enableBBcode=true;this._faceName="Arial";this._ptSize=12;this._lineHeightOffset=0;this._isBold=false;this._isItalic=false;this._color=C3.New(C3.Color);this._horizontalAlign=0;this._verticalAlign=0;this._wrapByWord=true;this._readAloud=false;this._screenReaderText=null;this._typewriterStartTime=-1;this._typewriterEndTime=
@@ -4190,15 +4199,6 @@ await imageInfo.LoadStaticTexture(runtime.GetRenderer(),{sampling:runtime.GetSam
 }
 
 {
-'use strict';{const C3=self.C3;C3.Plugins.Share=class SharePlugin extends C3.SDKPluginBase{constructor(opts){super(opts)}Release(){super.Release()}}}{const C3=self.C3;C3.Plugins.Share.Type=class ShareType extends C3.SDKTypeBase{constructor(objectClass){super(objectClass)}Release(){super.Release()}OnCreate(){}}}
-{const C3=self.C3;const DOM_COMPONENT_ID="share";C3.Plugins.Share.Instance=class ShareInstance extends C3.SDKInstanceBase{constructor(inst,properties){super(inst,DOM_COMPONENT_ID);this._isSupported=false;this._isFilesSupported=false;this._files=[];this.AddDOMMessageHandlers([["share-completed",()=>this._OnShareCompleted()],["share-failed",()=>this._OnShareFailed()]]);this._runtime.AddLoadPromise(this.PostToDOMAsync("init").then(o=>{this._isFilesSupported=o["isFilesSupported"];this._isSupported=o["isSupported"]}))}_OnShareCompleted(){this.Trigger(C3.Plugins.Share.Cnds.OnShareCompleted)}_OnShareFailed(){this.Trigger(C3.Plugins.Share.Cnds.OnShareFailed)}}}
-{const C3=self.C3;C3.Plugins.Share.Cnds={IsSupported(){return this._isSupported},IsSharingFilesSupported(){return this._isFilesSupported},OnShareCompleted(){return true},OnShareFailed(){return true}}}
-{const C3=self.C3;C3.Plugins.Share.Acts={Share(text,title,url){if(!this._isSupported)return;this._PostToDOMMaybeSync("share",{"text":text,"title":title,"url":url,"files":this._files});C3.clearArray(this._files)},AddFile(filename,type,objectClass){if(!this._isFilesSupported)return;if(!objectClass)return;const inst=objectClass.GetFirstPicked(this._inst);if(!inst)return;const arrayBuffer=inst.GetSdkInstance().GetArrayBufferReadOnly();if(arrayBuffer.byteLength===0)return;const FileCtor=self["RealFile"]||
-self["File"];const file=new FileCtor([arrayBuffer],filename,{"type":type});this._files.push(file)},RequestRate(body,confirm,cancel,appID){this._PostToDOMMaybeSync("request-rate",{"body":body,"confirm":confirm,"cancel":cancel,"appID":appID||this._runtime.GetAppId()})},RequestStore(appID){this._PostToDOMMaybeSync("request-store",{"appID":appID||this._runtime.GetAppId()})}}}{const C3=self.C3;C3.Plugins.Share.Exps={}};
-
-}
-
-{
 'use strict';{const C3=self.C3;C3.Behaviors.Timer=class TimerBehavior extends C3.SDKBehaviorBase{constructor(opts){super(opts)}Release(){super.Release()}}}{const C3=self.C3;C3.Behaviors.Timer.Type=class TimerType extends C3.SDKBehaviorTypeBase{constructor(behaviorType){super(behaviorType)}Release(){super.Release()}OnCreate(){}}}
 {const C3=self.C3;const C3X=self.C3X;const IBehaviorInstance=self.IBehaviorInstance;C3.Behaviors.Timer.SingleTimer=class SingleTimer{constructor(current,total,duration,isRegular){this._current=C3.New(C3.KahanSum);this._current.Set(current||0);this._total=C3.New(C3.KahanSum);this._total.Set(total||0);this._duration=duration||0;this._isRegular=!!isRegular;this._isPaused=false}GetCurrentTime(){return this._current.Get()}GetTotalTime(){return this._total.Get()}GetDuration(){return this._duration}SetPaused(p){this._isPaused=
 !!p}IsPaused(){return this._isPaused}Add(t){this._current.Add(t);this._total.Add(t)}HasFinished(){return this._current.Get()>=this._duration}Update(){if(this.HasFinished())if(this._isRegular)this._current.Subtract(this._duration);else return true;return false}SaveToJson(){return{"c":this._current.Get(),"t":this._total.Get(),"d":this._duration,"r":this._isRegular,"p":this._isPaused}}LoadFromJson(o){this._current.Set(o["c"]);this._total.Set(o["t"]);this._duration=o["d"];this._isRegular=!!o["r"];this._isPaused=
@@ -4242,6 +4242,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Mouse,
 		C3.Plugins.Arr,
 		C3.Plugins.Audio,
+		C3.Plugins.Share,
 		C3.Plugins.Text,
 		C3.Plugins.TextBox,
 		C3.Plugins.iframe,
@@ -4250,7 +4251,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Timer,
 		C3.Behaviors.Fade,
 		C3.Plugins.TiledBg,
-		C3.Plugins.Share,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.Audio.Acts.PlayByName,
@@ -4309,8 +4309,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Exps.random,
 		C3.Plugins.System.Cnds.Every,
 		C3.Plugins.System.Cnds.CompareBoolVar,
-		C3.ScriptsInEvents.事件表1_Event74_Act1,
-		C3.ScriptsInEvents.事件表1_Event79_Act1,
+		C3.ScriptsInEvents.事件表1_Event76_Act1,
+		C3.ScriptsInEvents.事件表1_Event81_Act1,
 		C3.Plugins.Mouse.Exps.X,
 		C3.Plugins.Mouse.Exps.Y,
 		C3.Plugins.Touch.Exps.X,
@@ -4333,7 +4333,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Timer.Cnds.OnTimer,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.TextBox.Cnds.OnTextChanged,
-		C3.ScriptsInEvents.事件表1_Event170_Act2,
+		C3.ScriptsInEvents.事件表1_Event172_Act2,
 		C3.Plugins.TextBox.Acts.SetText
 	];
 };
@@ -4352,6 +4352,7 @@ self.C3_JsPropNameTable = [
 	{Btn_Herbicide6: 0},
 	{Btn_Herbicide7: 0},
 	{Btn_Herbicide8: 0},
+	{Btn_Share: 0},
 	{AJAX: 0},
 	{JSON: 0},
 	{LocalStorage: 0},
@@ -4359,6 +4360,7 @@ self.C3_JsPropNameTable = [
 	{滑鼠: 0},
 	{Array: 0},
 	{音頻: 0},
+	{分享: 0},
 	{ContextBG: 0},
 	{LoginMaskBG: 0},
 	{StartGameBG: 0},
@@ -4405,8 +4407,6 @@ self.C3_JsPropNameTable = [
 	{WrongImg: 0},
 	{TimerBar: 0},
 	{TimerBarMask: 0},
-	{Btn_Share: 0},
-	{分享: 0},
 	{Rank1: 0},
 	{Rank2: 0},
 	{UserID: 0},
@@ -4648,6 +4648,7 @@ self.C3_ExpressionFuncs = [
 			const f1 = p._GetNode(1).GetBoundMethod();
 			return () => f0(f1(10));
 		},
+		() => 11,
 		() => "遊戲時間",
 		p => {
 			const v0 = p._GetNode(0).GetVar();

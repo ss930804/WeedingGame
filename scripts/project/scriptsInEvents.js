@@ -61,17 +61,17 @@ const scriptsInEvents = {
 		runtime.globalVars.Debug = rank;
 	},
 
-	async 事件表1_Event74_Act1(runtime, localVars)
+	async 事件表1_Event76_Act1(runtime, localVars)
 	{
 		console.log("Grow Time up");
 	},
 
-	async 事件表1_Event79_Act1(runtime, localVars)
+	async 事件表1_Event81_Act1(runtime, localVars)
 	{
 		console.log("GameTime up");
 	},
 
-	async 事件表1_Event170_Act2(runtime, localVars)
+	async 事件表1_Event172_Act2(runtime, localVars)
 	{
 		var phone=runtime.globalVars.Debug;
 		var js = JSON.parse(runtime.globalVars.MyData);
