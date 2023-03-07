@@ -14,5 +14,7 @@ background:url(/文件/遊戲開始頁面_選單選中.png)
 }
 #Share
 {
+height:100px;
+width:200px;
 background:url(/文件/排行榜_按鈕_分享.png)
 }

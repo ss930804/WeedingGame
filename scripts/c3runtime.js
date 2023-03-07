@@ -4525,8 +4525,8 @@ self.C3_ExpressionFuncs = [
 			const v0 = p._GetNode(0).GetVar();
 			return () => (60 - v0.GetValue());
 		},
-		() => "<div id=\"fb-root\"></div>\n<script async defer crossorigin=\"anonymous\" src=\"https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v16.0\" nonce=\"6VozwxiT\"></script>\n<div id = \"Share\" class=\"fb-share-button\" data-href=\"https://www.kooco.co/\" data-layout=\"button\" data-size=\"large\" style=\"width=100% height=100%\"><a target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse\" class=\"fb-xfbml-parse-ignore\">分享</a></div>",
-		() => "<div id=\"fb-root\"></div>\n<script async defer crossorigin=\"anonymous\" src=\"https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v16.0\" nonce=\"7XN23QtV\"></script>\n<div id = \"Share\" class=\"fb-share-button\" data-href=\"https://www.kooco.co/\" data-layout=\"button\" data-size=\"small\"><a target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse\" class=\"fb-xfbml-parse-ignore\">分享</a></div>\n",
+		() => "<div id=\"fb-root\"></div>\n<script async defer crossorigin=\"anonymous\" src=\"https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v16.0\" nonce=\"6VozwxiT\"></script>\n<div class=\"fb-share-button\" data-href=\"https://www.kooco.co/\" data-layout=\"button\" data-size=\"large\" style=\"width=100% height=100%\"></div>",
+		() => "<div id=\"fb-root\"></div>\n<script async defer crossorigin=\"anonymous\" src=\"https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v16.0\" nonce=\"7XN23QtV\"></script>\n<div class=\"fb-share-button\" data-href=\"https://www.kooco.co/\" data-layout=\"button\" data-size=\"small\"></div>\n",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => (and("{\"Point\":\"", v0.GetValue()) + "\"}");
