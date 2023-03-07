@@ -3,7 +3,7 @@
 
 const scriptsInEvents = {
 
-	async 事件表1_Event43_Act2(runtime, localVars)
+	async 事件表1_Event44_Act2(runtime, localVars)
 	{
 		var js = JSON.parse(runtime.globalVars.Debug);
 		
@@ -13,7 +13,7 @@ const scriptsInEvents = {
 		}
 	},
 
-	async 事件表1_Event46_Act2(runtime, localVars)
+	async 事件表1_Event47_Act2(runtime, localVars)
 	{
 		console.log("Get Ranking");
 		var js = JSON.parse(runtime.globalVars.Debug);
@@ -61,17 +61,17 @@ const scriptsInEvents = {
 		runtime.globalVars.Debug = rank;
 	},
 
-	async 事件表1_Event70_Act1(runtime, localVars)
+	async 事件表1_Event73_Act1(runtime, localVars)
 	{
 		console.log("Grow Time up");
 	},
 
-	async 事件表1_Event74_Act1(runtime, localVars)
+	async 事件表1_Event78_Act1(runtime, localVars)
 	{
 		console.log("GameTime up");
 	},
 
-	async 事件表1_Event161_Act2(runtime, localVars)
+	async 事件表1_Event169_Act2(runtime, localVars)
 	{
 		var phone=runtime.globalVars.Debug;
 		var js = JSON.parse(runtime.globalVars.MyData);
