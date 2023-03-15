@@ -4284,6 +4284,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.SetLayerInteractive,
 		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.AJAX.Acts.Request,
+		C3.Plugins.TextBox.Acts.SetVisible,
+		C3.Plugins.List.Acts.SetVisible,
 		C3.Plugins.Sprite.Acts.StopAnim,
 		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.Sprite.Acts.SetY,
@@ -4336,8 +4338,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Exps.random,
 		C3.Plugins.System.Cnds.Every,
 		C3.Plugins.System.Cnds.CompareBoolVar,
-		C3.ScriptsInEvents.事件表1_Event97_Act1,
-		C3.ScriptsInEvents.事件表1_Event102_Act1,
+		C3.ScriptsInEvents.事件表1_Event99_Act1,
+		C3.ScriptsInEvents.事件表1_Event104_Act1,
 		C3.Plugins.Mouse.Exps.X,
 		C3.Plugins.Mouse.Exps.Y,
 		C3.Plugins.Touch.Exps.X,
@@ -4360,7 +4362,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Timer.Cnds.OnTimer,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.TextBox.Cnds.OnTextChanged,
-		C3.ScriptsInEvents.事件表1_Event222_Act2,
+		C3.ScriptsInEvents.事件表1_Event224_Act2,
 		C3.Plugins.TextBox.Acts.SetText
 	];
 };
@@ -4464,6 +4466,7 @@ self.C3_JsPropNameTable = [
 	{MaxPoint: 0},
 	{IsMouseClick: 0},
 	{ChooseSceneIndex: 0},
+	{Weed0Count: 0},
 	{RandomChange: 0},
 	{NowStage: 0},
 	{WeedUID: 0},
@@ -4613,14 +4616,14 @@ self.C3_ExpressionFuncs = [
 			return () => (("https://weedingg-e6f04-default-rtdb.asia-southeast1.firebasedatabase.app/LoadingData/" + v0.GetValue()) + ".json");
 		},
 		() => 778,
-		() => 930,
+		() => 1010,
 		() => 1028,
 		() => 1278,
 		() => 1528,
 		() => 1778,
 		() => "分享網址",
 		() => "ShareURL",
-		() => "https://user211300.psee.io/4tzuz9",
+		() => "http://user211300.psee.io/4tzuz9",
 		() => "https://crop-protection.basf.tw",
 		() => "MyList",
 		() => "AJAX事件",
@@ -4694,6 +4697,11 @@ self.C3_ExpressionFuncs = [
 			const f1 = p._GetNode(1).GetBoundMethod();
 			return () => f0(f1(3));
 		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => f0(f1(1, 3));
+		},
 		() => 8,
 		() => 9,
 		p => {
@@ -4729,6 +4737,7 @@ self.C3_ExpressionFuncs = [
 		() => "Point",
 		() => -2,
 		() => "噴錯農藥_2",
+		() => -15,
 		() => "Wrong",
 		p => {
 			const n0 = p._GetNode(0);
