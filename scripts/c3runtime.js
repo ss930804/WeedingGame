@@ -4279,6 +4279,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.TiledBg,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.System.Cnds.OnLayoutStart,
+		C3.Plugins.Audio.Acts.PlayByName,
 		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Plugins.System.Acts.SetLayerInteractive,
 		C3.Plugins.System.Acts.Wait,
@@ -4295,7 +4296,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Spritefont2.Acts.SetText,
 		C3.Plugins.Sprite.Acts.SetBoolInstanceVar,
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
-		C3.Plugins.Audio.Acts.PlayByName,
 		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.Sprite.Cnds.CompareY,
 		C3.Plugins.System.Cnds.Else,
@@ -4569,6 +4569,8 @@ function or(l, r)
 
 self.C3_ExpressionFuncs = [
 		() => "初始化",
+		() => "BG",
+		() => -10,
 		() => 0,
 		() => 0.1,
 		() => "data",
@@ -4598,7 +4600,6 @@ self.C3_ExpressionFuncs = [
 		() => "按鈕事件",
 		() => "點擊除草劑",
 		() => "選取農藥_3",
-		() => -10,
 		() => "Pick",
 		() => 952,
 		() => "",

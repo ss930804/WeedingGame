@@ -10,7 +10,8 @@ border-radius: 0.5vw;
 {
 font-size:2vw;
 border-radius: 0.5vw;
-background:url(/文件/遊戲開始頁面_選單選中.png)
+background:url(/文件/遊戲開始頁面_選單選中.png);
+appearance:none
 }
 #Share
 {
