@@ -92,8 +92,6 @@ const scriptsInEvents = {
 			if(keys[i]==phone)
 			{
 				runtime.globalVars.Debug=js[phone]["Name"];
-				runtime.globalVars.MyCounty=js[phone]["County"];
-				runtime.globalVars.MyStore=js[phone]["Store"];
 				break;
 			}
 		}
